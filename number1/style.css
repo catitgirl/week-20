@@ -4,12 +4,30 @@ html {
 }
 
 body {
-  width: 800px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2 {
   font-family: "Faster One", cursive;
+  color: navy;
+}
+
+.hero {
+  padding: 20px;
+  padding-bottom: 35px;
+  border: 2px solid bisque;
+  border-radius: 10px;
+  text-align: center;
+  background-color: blanchedalmond;
+  margin: 10px;
+}
+
+#heroesContainer {
+  width: 100vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
 }
 
 /* header styles */
