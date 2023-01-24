@@ -1,23 +1,34 @@
 const json = ` [{
-        "name" : "Molecule Man",
-        "age" : 29,
-        "secretIdentity" : "Dan Jukes",
-        "powers": "laserblast"
+        "name" : "Black Cat",
+        "position" : "change, usually good",
+        "psevdonims" : "Felicia Harmon, Felicity Harmon, Lish, Phi-Phi, Paty Hardy",
+        "species" : "genetically modified person",
+        "height": "178 cm",
+        "weight" : "54 kg",
+        "marital status" : "single, in love with Spider-Man",
+        "occupation" : "Superhero, Private Investigator, Adventurer, Former Thief"
       },
       {
-        "name" : "Madame Uppercut",
-        "age" : 39,
-        "secretIdentity" : "Jane Wilson",
-        "powers" : "can fire"
+        "name" : "Black Widow",
+        "position" : "good",
+        "psevdonims" : "Natalie Rushman, Laura Matters, Mary Farrell, October",
+        "species" : "serum-enhanced man",
+        "height": "170 cm",
+        "weight" : "59 kg",
+        "marital status" : "daughter of the Red Guard",
+        "occupation" : "Spy, assassin, later superheroine"  
       },
       {
-        "name" : "Eternal Flame",
-        "age" : 1000000,
-        "secretIdentity" : "Unknown",
-        "powers" : "can fire"
+        "name" : "Power Woman",
+        "position" : "good",
+        "psevdonims" : "Jewel, Knightress, Power Woman",
+        "species" : "mutant",
+        "height": "163 cm",
+        "weight" : "54 kg",
+        "marital" : "Married to Luke Cage",
+        "occupation" : "Superhero, private detective, journalist" 
     }
 ]`;
-  debugger
 
   document.addEventListener("DOMContentLoaded", function
   (event) {
@@ -27,9 +38,13 @@ const json = ` [{
     for (let hero of heroes) {
         heroesContent += `<div class='hero'>
         <h2> ${hero.name}</h2>
-        <div>Age: ${hero.age}</div>
-        <div>${hero.secretIdentity}</div>
-        <div>Power: ${hero.powers}</div>
+        <div><p>Position:</p> ${hero.position}</div>
+        <div><p>Psevdonims:</p>${hero.psevdonims}</div>
+        <div><p>Species:</p> ${hero.species}</div>
+        <div><p>Height:</p> ${hero.height}</div>
+        <div><p>Weight:</p> ${hero.weight}</div>
+        <div><p>Marital status:</p> ${hero.marital}</div>
+        <div><p>Occupation:</p> ${hero.occupation}</div>
         </div>`;
     }
 

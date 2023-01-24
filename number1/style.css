@@ -1,4 +1,3 @@
-/* || general styles */
 html {
   font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
@@ -11,77 +10,49 @@ body {
 h1, h2 {
   font-family: "Faster One", cursive;
   color: navy;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 3px;
 }
 
 .hero {
   padding: 20px;
-  padding-bottom: 35px;
   border: 2px solid bisque;
   border-radius: 10px;
-  text-align: center;
   background-color: blanchedalmond;
   margin: 10px;
 }
 
 #heroesContainer {
-  width: 100vh;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-/* header styles */
-h1 {
-  font-size: 4rem;
-  text-align: center;
+#pict {
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-header p {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* section styles */
-html {
-  font-family: "helvetica neue", helvetica, arial, sans-serif;
-}
-
-body {
-  width: 800px;
-  margin: 0 auto;
-}
-
-h1, h2 {
-  font-family: "Faster One", cursive;
-}
-
-h1 {
-  font-size: 4rem;
-  text-align: center;
-}
-
-header p {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-section article {
-  width: 33%;
-  float: left;
-}
-
-section p {
-  margin: 5px 0;
-}
-
-section ul {
-  margin-top: 0;
-}
-
-h2 {
-  font-size: 2.5rem;
-  letter-spacing: -5px;
-  margin-bottom: 10px;
+img {
+  width: 500px;
+  height: 780px;
+  margin: 20px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
