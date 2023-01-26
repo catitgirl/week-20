@@ -30,13 +30,12 @@ const json = ` [{
   }
 ]`;
 
-  document.addEventListener("DOMContentLoaded", function
-  (event) {
-    let heroes = JSON.parse(json);
+document.addEventListener("DOMContentLoaded", function (event) {
+  let heroes = JSON.parse(json);
 
-    let heroesContent = "";
-    for (let hero of heroes) {
-        heroesContent += `<div class='hero'>
+  let heroesContent = "";
+  for (let hero of heroes) {
+    heroesContent += `<div class='hero'>
         <h2> ${hero.name}</h2>
         <div><strong>Position:</strong> ${hero.position}</div>
         <div><strong>Psevdonims:</strong>${hero.psevdonims}</div>
@@ -46,69 +45,25 @@ const json = ` [{
         <div><strong>Marital status:</strong> ${hero.marital}</div>
         <div><strong>Occupation:</strong> ${hero.occupation}</div>
         </div>`;
-    }
+  }
 
-    document.getElementById("heroesContainer").innerHTML = heroesContent;
-  });
-
+  document.getElementById("heroesContainer").innerHTML = heroesContent;
+});
 
 // rating
+const ratingItemsList = document.querySelectorAll('.rating__item');
+const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
 
-"use strict"
-const ratings = document.querySelectorAll('.rating');
-if (ratings.length > 0) {
-  initRatings();
-}
+ratingItemsArray.forEach(item =>
+  item.addEventListener('click', () => {
+    const {
+      itemValue
+    } = item.dataset;
+    item.parentNode.dataset.totalValue = itemValue;
 
-function initRatings() {
-  let ratingActive, ratingValue;
-  for (let index = 0; index < ratings.length; index++) {
-    const rating = ratings[index];
-    initRating(rating);
-  }
-
-  function initRating(rating) {
-iniRatingsVars(rating);
-
-setRatingActiveWidth();
-
-if (rating.classList.contains('rating_set')) {
-  setRating(rating);
-}
-  }
-
-  function iniRatingsVars(rating) {
-    ratingActive = rating.querySelector('.rating__active');
-    ratingValue = rating.querySelector('.rating__value');
-  }
-
-  function setRatingActiveWidth(index = ratingValue.innerHTML) {
-    const ratingActiveWidth = index / 0.05;
-    ratingActive.style.width = `${ratingActiveWidth}%`;
-  }
-
-  function setRating(rating) {
-const ratingItems = rating.querySelectorAll('.rating__item');
-for (let index = 0; index < ratingItems.length; index++) {
-  const ratingItem = ratingItems[index];
-  ratingItem.addEventListener("mouseenter", function (e) {
-    iniRatingsVars(rating);
-    setRatingActiveWidth(ratingItem.value);
-  });
-  ratingItem.addEventListener("mouseleave", function (e) {
-    setRatingActiveWidth();
-});
-
-ratingItem.addEventListener("click", function (e) {
-iniRatingsVars(rating);
-
-if (rating.dataset.ajax) {
-  setRatingValue(ratingItem.value, rating);
-} else {
-ratingValue.innerHTML = index +1;
-setRatingActiveWidth();
-}
-});
-  }
-}
-}
+    // преобразовываем объект в строку и сохраняем в localStorage
+    localStorage.setItem('itemValue', JSON.stringify(itemValue));
+    const savedRating = JSON.parse(localStorage.getItem('itemValue'));
+    console.log(savedRating)
+  })
+);

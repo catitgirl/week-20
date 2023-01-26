@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
@@ -9,7 +8,8 @@ body {
   background-image: url(./assets/fon_marvel.jpg);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Faster One", cursive;
   text-align: center;
 }
@@ -47,7 +47,7 @@ p {
   padding-right: 40px;
 }
 
-#pict {
+#heroes-womans {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -63,63 +63,32 @@ img {
   border-radius: 10px;
 }
 
-#hero1, #hero2, #hero3 {
+#hero1,
+#hero2,
+#hero3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: antiquewhite;
   border-radius: 10px;
+  padding: 20px;
 }
 
 .rating {
-  display: flex;
-  align-items: flex-end;
+  display: inline-flex;
+  flex-direction: row-reverse;
   font-size: 40px;
   line-height: 0.75;
 }
-
-.rating__body {
-  position: relative;
-}
-
-.rating__body::before {
-  content: "★★★★★";
-  display: block;
-}
-
-.rating__active {
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.rating__active::before {
-  content: "★★★★★";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  color: #ffd300;
-}
-
-.rating__items {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
 .rating__item {
-  flex: 0 0 20%;
-  height: 100%;
-  opacity: 0;
+  color: lightgrey;
+  font-size: 60px;
+  cursor: pointer;
+  transition: 0.2s;
 }
-
-.rating__value {
-  font-size: 50%;
-  line-height: 1;
-  padding: 0px 0px 0px 10px;
+.rating__item:hover, .rating__item:hover ~ .rating__item {
+  color: darkgray;
+}
+.rating[data-total-value="1"] .rating__item:nth-child(n+5), .rating[data-total-value="2"] .rating__item:nth-child(n+4), .rating[data-total-value="3"] .rating__item:nth-child(n+3), .rating[data-total-value="4"] .rating__item:nth-child(n+2), .rating[data-total-value="5"] .rating__item:nth-child(n+1) {
+  color: orange;
 }/*# sourceMappingURL=style.css.map */
