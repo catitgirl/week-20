@@ -50,9 +50,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   document.getElementById("heroesContainer").innerHTML = heroesContent;
 });
 
+
 // rating
 const ratingItemsList = document.querySelectorAll('.rating__item');
 const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
+const values = [];
 
 ratingItemsArray.forEach(item =>
   item.addEventListener('click', () => {
@@ -61,9 +63,12 @@ ratingItemsArray.forEach(item =>
     } = item.dataset;
     item.parentNode.dataset.totalValue = itemValue;
 
+    values.push(itemValue);
+
     // преобразовываем объект в строку и сохраняем в localStorage
-    localStorage.setItem('itemValue', JSON.stringify(itemValue));
-    const savedRating = JSON.parse(localStorage.getItem('itemValue'));
+    localStorage.setItem('values', JSON.stringify(values));
+    const savedRating = JSON.parse(localStorage.getItem('values'));
     console.log(savedRating)
+
   })
 );

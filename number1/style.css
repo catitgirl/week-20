@@ -47,7 +47,7 @@ p {
   padding-right: 40px;
 }
 
-#heroes-womans {
+#pict {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -58,7 +58,7 @@ p {
 
 img {
   width: 80%;
-  height: 680px;
+  height: 580px;
   margin: 20px;
   border-radius: 10px;
 }
