@@ -1,0 +1,16 @@
+body {
+	background-color: lightblue;
+	font-size: 28px;
+	color: navy;
+}
+.container {
+	padding: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+img {
+	padding-top: 20px;
+	width: 450px;
+	height: 450px;
+}

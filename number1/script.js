@@ -50,11 +50,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   document.getElementById("heroesContainer").innerHTML = heroesContent;
 });
 
-
 // rating
 const ratingItemsList = document.querySelectorAll('.rating__item');
 const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
 const values = [];
+
 
 ratingItemsArray.forEach(item =>
   item.addEventListener('click', () => {
@@ -69,6 +69,5 @@ ratingItemsArray.forEach(item =>
     localStorage.setItem('values', JSON.stringify(values));
     const savedRating = JSON.parse(localStorage.getItem('values'));
     console.log(savedRating)
-
   })
 );
